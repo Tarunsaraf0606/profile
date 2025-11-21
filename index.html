@@ -656,11 +656,13 @@
     <div style="font-size:13px;color:#9ca3af">Public Repositories</div>
   </div>
 
+
   <div style="background:rgba(255,255,255,0.03);padding:10px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);min-width:140px;text-align:center">
     <div style="font-weight:800;font-size:20px;background:linear-gradient(135deg,#06b6d4,#10b981);-webkit-background-clip:text;color:transparent">42</div>
     <div style="font-size:13px;color:#9ca3af">Contributions (past year)</div>
   </div>
 </div>
+<!-- Latest GitHub Repositories -->
 
     <!-- Skills Section -->
     <section class="skills" id="skills">
@@ -702,7 +704,7 @@
     <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="container">
-            <h2 class="section-title">Projects & Libraries</h2>
+            <h2 class="section-title">Work Experience</h2>
             <div class="projects-grid">
                 <div class="project-card highlight">
                     <h3 class="project-title">BugBoy Library</h3>
@@ -714,7 +716,7 @@
                     </div>
                 </div>
                 <div class="project-card highlight">
-                    <h3 class="project-title">Multi-OAuth System</h3>
+                    <h3 class="project-title">Multi-OAuth and otp verification System</h3>
                     <p class="project-desc">Production-grade OAuth implementation supporting multiple providers with Redis-based rate limiting and session management.</p>
                     <div class="project-tags">
                         <span class="tag">OAuth</span>
@@ -733,7 +735,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3 class="project-title">Redis Worker Helper</h3>
+                    <h3 class="project-title">Redis task Worker </h3>
                     <p class="project-desc">Efficient Redis-based worker system for background job processing and task queue management.</p>
                     <div class="project-tags">
                         <span class="tag">Redis</span>
@@ -742,7 +744,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3 class="project-title">Google OAuth Helper</h3>
+                    <h3 class="project-title">AWS based video transcode pipeline </h3>
                     <p class="project-desc">Streamlined Google OAuth integration helper for quick authentication setup in applications.</p>
                     <div class="project-tags">
                         <span class="tag">OAuth</span>
@@ -750,18 +752,28 @@
                         <span class="tag">Auth</span>
                     </div>
                 </div>
-                <div class="project-card" style="background: rgba(220, 38, 38, 0.05); border-color: rgba(220, 38, 38, 0.2);">
-                    <h3 class="project-title">📺 YouTube Channel</h3>
-                    <p class="project-desc">Tutorials on backend development, database optimization, and building production-grade systems. Content coming soon!</p>
+                <div class="project-card">
+                    <h3 class="project-title">Payment handling </h3>
+                    <p class="project-desc">Payment handling with various payment gateway like razorpay,strip. </p>
                     <div class="project-tags">
-                        <span class="tag">Tutorials</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">Backend</span>
+                        <span class="tag">payment</span>
+                        <span class="tag">razorpay</span>
+                        <span class="tag">strip</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <section class="projects" id="latest-repos">
+    <div class="container">
+        <h2 class="section-title">Latest GitHub Repositories</h2>
+        <div class="projects-grid" id="repoContainer">
+            <p class="loading">Fetching latest repositories...</p>
+        </div>
+    </div>
+</section>
+
+
 
     <!-- Footer -->
     <footer>
@@ -841,6 +853,47 @@
                 `;
             }
         }
+
+async function loadLatestRepos() {
+    const username = "Tarunsaraf0606";
+    const container = document.getElementById("repoContainer");
+
+    try {
+        const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
+        const repos = await res.json();
+
+        container.innerHTML = "";
+
+        repos.forEach(repo => {
+            const div = document.createElement("div");
+            div.className = "project-card";
+
+            div.innerHTML = `
+                <h3 class="project-title">${repo.name}</h3>
+                <p class="project-desc">${repo.description || "No description available."}</p>
+
+                <div class="project-tags">
+                    <span class="tag">${repo.language || "Code"}</span>
+                    <span class="tag">⭐ ${repo.stargazers_count}</span>
+                    <span class="tag">🍴 ${repo.forks_count}</span>
+                </div>
+
+                <br>
+                <a href="${repo.html_url}" target="_blank" style="color:#06b6d4;font-weight:600;">
+                    View Repository →
+                </a>
+            `;
+            container.appendChild(div);
+        });
+    } catch (err) {
+        container.innerHTML = "<p style='color:#ef4444;'>Failed to load repositories.</p>";
+        console.error(err);
+    }
+}
+
+loadLatestRepos();
+
+
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
