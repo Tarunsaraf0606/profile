@@ -7,14 +7,12 @@
 <meta name="keywords" content="Tarun Saraf, Guddu Saraf, Backend Engineer, FastAPI Developer, OAuth Backend, Python Developer, Redis, PostgreSQL, API Developer, Software Engineer India" />
 <meta name="author" content="Tarun Saraf" />
 
-
 <!-- Open Graph / Social Sharing -->
 <meta property="og:title" content="Tarun Saraf – Backend Engineer" />
 <meta property="og:description" content="Building production-grade backends with FastAPI, PostgreSQL, OAuth, Redis & modern infrastructure." />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="./image/img1.jpeg" />
 <meta property="og:url" content="https://tarunsaraf.dev" />
-
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
@@ -26,10 +24,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="./image/favicon-32x32.png">
 <link rel="shortcut icon" href="./favicon.png">
 
-
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Tarun Saraf — Backend Engineer</title>
+<title>Tarun Saraf – Backend Engineer</title>
     <style>
         * {
             margin: 0;
@@ -264,6 +261,123 @@
             fill: #06b6d4;
         }
 
+        /* Featured Project */
+        .featured-project {
+            padding: 80px 24px;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+        }
+
+        .featured-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(6, 182, 212, 0.4);
+            padding: 48px;
+            border-radius: 24px;
+            position: relative;
+        }
+
+        .live-badge {
+            position: absolute;
+            top: -12px;
+            left: 32px;
+            background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: white;
+        }
+
+        .featured-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-top: 12px;
+            margin-bottom: 20px;
+            color: #e5e7eb;
+        }
+
+        .featured-desc {
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 32px;
+            color: #9ca3af;
+        }
+
+        .features-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 32px;
+            border-left: 4px solid #06b6d4;
+        }
+
+        .features-title {
+            color: #06b6d4;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+        .feature-item {
+            color: #e5e7eb;
+            font-size: 14px;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 15px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e5e7eb;
+            padding: 14px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 15px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
         /* GitHub Stats */
         .github-stats {
             padding: 80px 24px;
@@ -288,8 +402,6 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 24px;
         }
-
-
 
         .stat-card {
             background: rgba(255, 255, 255, 0.03);
@@ -544,6 +656,23 @@
             .github-stats, .skills, .projects {
                 padding: 60px 24px;
             }
+
+            .featured-card {
+                padding: 32px 24px;
+            }
+
+            .featured-title {
+                font-size: 24px;
+            }
+
+            .project-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -610,7 +739,7 @@
                 <div class="logo">Tarun Saraf</div>
                 <div class="nav-links">
                     <a href="#home">Home</a>
-                    <a href="#github">GitHub Stats</a>
+                    <a href="#featured">Featured Project</a>
                     <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
                 </div>
@@ -649,20 +778,69 @@
         </div>
     </section>
 
-<!-- Hero stats (quick) -->
-<div style="display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap">
-  <div style="background:rgba(255,255,255,0.03);padding:10px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);min-width:140px;text-align:center">
-    <div style="font-weight:800;font-size:20px;background:linear-gradient(135deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;color:transparent">5</div>
-    <div style="font-size:13px;color:#9ca3af">Public Repositories</div>
-  </div>
+    <!-- Quick Stats -->
+    <div style="display:flex;gap:12px;justify-content:center;margin-top:18px;flex-wrap:wrap;padding:0 24px;">
+        <div style="background:rgba(255,255,255,0.03);padding:10px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);min-width:140px;text-align:center">
+            <div style="font-weight:800;font-size:20px;background:linear-gradient(135deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">5</div>
+            <div style="font-size:13px;color:#9ca3af">Public Repositories</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);padding:10px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);min-width:140px;text-align:center">
+            <div style="font-weight:800;font-size:20px;background:linear-gradient(135deg,#06b6d4,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">42</div>
+            <div style="font-size:13px;color:#9ca3af">Contributions (past year)</div>
+        </div>
+    </div>
 
-
-  <div style="background:rgba(255,255,255,0.03);padding:10px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);min-width:140px;text-align:center">
-    <div style="font-weight:800;font-size:20px;background:linear-gradient(135deg,#06b6d4,#10b981);-webkit-background-clip:text;color:transparent">42</div>
-    <div style="font-size:13px;color:#9ca3af">Contributions (past year)</div>
-  </div>
-</div>
-<!-- Latest GitHub Repositories -->
+    <!-- Featured Project Section -->
+    <section class="featured-project" id="featured">
+        <div class="container">
+            <h2 class="section-title">🚀 Featured Deployed Project</h2>
+            <div class="featured-card">
+                <div class="live-badge">LIVE PROJECT</div>
+                
+                <h3 class="featured-title">URL-Shortener with 🔐 Authentication - Multi-Provider Login</h3>
+                
+                <p class="featured-desc">
+                    A production-ready authentication system supporting multiple OAuth providers (Google, GitHub, Microsoft) with email/password authentication, OTP verification, and secure session management. Built with FastAPI, Redis, and PostgreSQL for high performance and scalability.
+                </p>
+                
+                <div class="features-box">
+                    <h4 class="features-title">✨ KEY FEATURES</h4>
+                    <div class="features-grid">
+                        <div class="feature-item">• Multi-provider OAuth (Google, GitHub, Microsoft)</div>
+                        <div class="feature-item">• Email/Password authentication with bcrypt</div>
+                        <div class="feature-item">• OTP verification via email</div>
+                        <div class="feature-item">• Redis-based session management</div>
+                        <div class="feature-item">• Rate limiting & security headers</div>
+                        <div class="feature-item">• JWT token authentication</div>
+                    </div>
+                </div>
+                
+                <div class="project-tags" style="margin-bottom: 32px;">
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">OAuth 2.0</span>
+                    <span class="tag">Redis</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">JWT</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Python</span>
+                </div>
+                
+                <div class="project-buttons">
+                    <a href="https://bugboy.onrender.com/" target="_blank" class="btn-primary">
+                        🌐 View Live Demo
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                            <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                        </svg>
+                    </a>
+                    <!-- <a href="https://github.com/Tarunsaraf0606/Authentication-Multi-Provider-Login" target="_blank" class="btn-secondary">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                        View Source Code
+                    </a> -->
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Skills Section -->
     <section class="skills" id="skills">
@@ -716,7 +894,7 @@
                     </div>
                 </div>
                 <div class="project-card highlight">
-                    <h3 class="project-title">Multi-OAuth and otp verification System</h3>
+                    <h3 class="project-title">Multi-OAuth and OTP verification System</h3>
                     <p class="project-desc">Production-grade OAuth implementation supporting multiple providers with Redis-based rate limiting and session management.</p>
                     <div class="project-tags">
                         <span class="tag">OAuth</span>
@@ -735,7 +913,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3 class="project-title">Redis task Worker </h3>
+                    <h3 class="project-title">Redis Task Worker</h3>
                     <p class="project-desc">Efficient Redis-based worker system for background job processing and task queue management.</p>
                     <div class="project-tags">
                         <span class="tag">Redis</span>
@@ -744,36 +922,36 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3 class="project-title">AWS based video transcode pipeline </h3>
-                    <p class="project-desc">Streamlined Google OAuth integration helper for quick authentication setup in applications.</p>
+                    <h3 class="project-title">AWS Based Video Transcode Pipeline</h3>
+                    <p class="project-desc">Streamlined video transcoding pipeline using AWS services for efficient media processing.</p>
                     <div class="project-tags">
-                        <span class="tag">OAuth</span>
-                        <span class="tag">Google</span>
-                        <span class="tag">Auth</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Video</span>
+                        <span class="tag">Pipeline</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3 class="project-title">Payment handling </h3>
-                    <p class="project-desc">Payment handling with various payment gateway like razorpay,strip. </p>
+                    <h3 class="project-title">Payment Handling</h3>
+                    <p class="project-desc">Payment handling with various payment gateways like Razorpay and Stripe.</p>
                     <div class="project-tags">
-                        <span class="tag">payment</span>
-                        <span class="tag">razorpay</span>
-                        <span class="tag">strip</span>
+                        <span class="tag">Payment</span>
+                        <span class="tag">Razorpay</span>
+                        <span class="tag">Stripe</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Latest Repositories -->
     <section class="projects" id="latest-repos">
-    <div class="container">
-        <h2 class="section-title">Latest GitHub Repositories</h2>
-        <div class="projects-grid" id="repoContainer">
-            <p class="loading">Fetching latest repositories...</p>
+        <div class="container">
+            <h2 class="section-title">Latest GitHub Repositories</h2>
+            <div class="projects-grid" id="repoContainer">
+                <p class="loading">Fetching latest repositories...</p>
+            </div>
         </div>
-    </div>
-</section>
-
-
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -792,22 +970,20 @@
             const username = 'Tarunsaraf0606';
             const statsContainer = document.getElementById('statsContainer');
             
+            if (!statsContainer) return;
+            
             try {
-                // Fetch user data
                 const userResponse = await fetch(`https://api.github.com/users/${username}`);
                 const userData = await userResponse.json();
                 
-                // Fetch repos
                 const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
                 const reposData = await reposResponse.json();
                 
-                // Calculate stats
                 const totalStars = reposData.reduce((acc, repo) => acc + repo.stargazers_count, 0);
                 const totalForks = reposData.reduce((acc, repo) => acc + repo.forks_count, 0);
                 const publicRepos = userData.public_repos;
                 const followers = userData.followers;
                 
-                // Display stats
                 statsContainer.innerHTML = `
                     <div class="stats-grid">
                         <div class="stat-card">
@@ -854,46 +1030,42 @@
             }
         }
 
-async function loadLatestRepos() {
-    const username = "Tarunsaraf0606";
-    const container = document.getElementById("repoContainer");
+        async function loadLatestRepos() {
+            const username = "Tarunsaraf0606";
+            const container = document.getElementById("repoContainer");
 
-    try {
-        const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
-        const repos = await res.json();
+            if (!container) return;
 
-        container.innerHTML = "";
+            try {
+                const res = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
+                const repos = await res.json();
 
-        repos.forEach(repo => {
-            const div = document.createElement("div");
-            div.className = "project-card";
+                container.innerHTML = "";
 
-            div.innerHTML = `
-                <h3 class="project-title">${repo.name}</h3>
-                <p class="project-desc">${repo.description || "No description available."}</p>
+                repos.forEach(repo => {
+                    const div = document.createElement("div");
+                    div.className = "project-card";
 
-                <div class="project-tags">
-                    <span class="tag">${repo.language || "Code"}</span>
-                    <span class="tag">⭐ ${repo.stargazers_count}</span>
-                    <span class="tag">🍴 ${repo.forks_count}</span>
-                </div>
-
-                <br>
-                <a href="${repo.html_url}" target="_blank" style="color:#06b6d4;font-weight:600;">
-                    View Repository →
-                </a>
-            `;
-            container.appendChild(div);
-        });
-    } catch (err) {
-        container.innerHTML = "<p style='color:#ef4444;'>Failed to load repositories.</p>";
-        console.error(err);
-    }
-}
-
-loadLatestRepos();
-
-
+                    div.innerHTML = `
+                        <h3 class="project-title">${repo.name}</h3>
+                        <p class="project-desc">${repo.description || "No description available."}</p>
+                        <div class="project-tags">
+                            <span class="tag">${repo.language || "Code"}</span>
+                            <span class="tag">⭐ ${repo.stargazers_count}</span>
+                            <span class="tag">🍴 ${repo.forks_count}</span>
+                        </div>
+                        <br>
+                        <a href="${repo.html_url}" target="_blank" style="color:#06b6d4;font-weight:600;">
+                            View Repository →
+                        </a>
+                    `;
+                    container.appendChild(div);
+                });
+            } catch (err) {
+                container.innerHTML = "<p style='color:#ef4444;'>Failed to load repositories.</p>";
+                console.error(err);
+            }
+        }
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -906,8 +1078,11 @@ loadLatestRepos();
             });
         });
 
-        // Load stats on page load
-        window.addEventListener('load', fetchGitHubStats);
+        // Load data on page load
+        window.addEventListener('load', () => {
+            fetchGitHubStats();
+            loadLatestRepos();
+        });
     </script>
 </body>
 </html>
